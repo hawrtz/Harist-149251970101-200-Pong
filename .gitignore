@@ -1,0 +1,11 @@
+
+Library/*
+Logs/*
+Temp/*
+
+.vsconfig
+.vs/*
+obj/*
+*.sln
+.vs/Pong/v16/.suo
+*.csproj
