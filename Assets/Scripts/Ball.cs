@@ -23,4 +23,6 @@ public class Ball : MonoBehaviour
     {
         rig.velocity *= magnitude;
     }
+
+
 }

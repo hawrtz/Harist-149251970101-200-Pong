@@ -14,4 +14,9 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("Created By Harist Setya Nugraha");
     }
+
+    public void MainKeMenu()
+    {
+        SceneManager.LoadScene("Main menu");
+    }
 }

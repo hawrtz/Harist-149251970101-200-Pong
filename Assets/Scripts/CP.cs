@@ -42,6 +42,6 @@ public class CP : MonoBehaviour
         rig.velocity = movement;
     }
 
-
+    
 
 }
