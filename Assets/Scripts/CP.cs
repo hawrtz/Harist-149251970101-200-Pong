@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class CP : MonoBehaviour
 {
+    private int TimesSpeed = 2;
     public int speed;
     public KeyCode upKey;
     public KeyCode downKey;
+    private float scale = 4;
+    private float timesUp;
 
     private Rigidbody2D rig;
     private void Start()
@@ -43,5 +46,29 @@ public class CP : MonoBehaviour
     }
 
     
+    public void ActivateSPP()
+    {
+        speed = TimesSpeed * speed;
+        StartCoroutine(SpeedAwal());
+    }
+
+    public void ActivateEPP()
+    {
+        this.gameObject.transform.localScale += new Vector3(0, scale, 0);
+        StartCoroutine(SkalaAwal());
+    }
+
+    IEnumerator SpeedAwal()
+    {
+        yield return new WaitForSeconds(timesUp);
+        Debug.Log("Cooldown");
+        speed = speed / TimesSpeed;
+    }
+
+    IEnumerator SkalaAwal()
+    {
+        yield return new WaitForSeconds(timesUp);
+        this.gameObject.transform.localScale -= new Vector3(0, scale, 0);
+    }
 
 }

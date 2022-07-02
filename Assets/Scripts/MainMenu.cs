@@ -19,4 +19,9 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Main menu");
     }
+
+    public void KeCredit()
+    {
+        SceneManager.LoadScene("Credit");
+    }
 }

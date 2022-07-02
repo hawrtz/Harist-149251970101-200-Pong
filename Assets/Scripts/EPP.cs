@@ -2,44 +2,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SPP : MonoBehaviour
+public class EPP : MonoBehaviour
 {
+
     [SerializeField]
     private PowerUpManager manager;
 
     [SerializeField]
-    private Collider2D Ball;
+    private Collider2D ball;
 
     [SerializeField]
-    private GameObject P1;
+    private GameObject CP;
 
-    [SerializeField]
-    private int destory = 2;
+    private int destroy = 2;
 
-    [SerializeField]
-    private GameObject P2;
+
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision == Ball)
+        if (collision = ball)
         {
-            P1.GetComponent<CP>().ActivateSPP();
-            P2.GetComponent<CP>().ActivateSPP();
+            CP.GetComponent<CP>().ActivateEPP();
             manager.RemovePowerUp(gameObject);
         }
-
     }
 
     private void Start()
     {
         StartCoroutine(DeathTime());
+    }
 
+    private void Update()
+    {
+        
     }
 
     IEnumerator DeathTime()
     {
-        yield return new WaitForSeconds(destory);
+        yield return new WaitForSeconds(destroy);
         Destroy(gameObject);
     }
-
 }
